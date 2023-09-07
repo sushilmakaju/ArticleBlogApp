@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content%}
+        <h1>Article List</h1>
+        <!-- Add navigation or header content here -->
+        <div class=Articles>
+            {% for i in articles %}
+               <div class=Article>
+                  <h2> <a href = '{% url "article_detail" slug=i.slug %}'> {{i.title}} </a> </h2>
+                  <p> {{i.snippet}} </p>
+                  <p> {{i.post_date}} </p>
+                </div>
+            {% endfor %}
+        </div>
+               
+{% endblock %}
